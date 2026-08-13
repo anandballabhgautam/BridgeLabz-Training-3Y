@@ -1,0 +1,59 @@
+﻿ASSIGNMENT 1
+Introduction to Web Development
+Topics covered: Frontend, Backend & Full-Stack Development, Client-Server Architecture, Web Servers, Development Tools, and Browsers.
+
+Question 1: Frontend vs Backend vs Full-Stack Development
+Frontend Development
+Frontend development refers to building the part of a website or application that users directly see and interact with in their browser - the layout, design, buttons, forms, and animations. It is built primarily using HTML (structure), CSS (styling), and JavaScript (interactivity), often with frameworks such as React, Angular, or Vue.js.
+Real-world example: The visual design and interactive elements of Netflix's homepage - the movie thumbnails, hover animations, search bar, and navigation menu - are all built by frontend developers.
+Backend Development
+Backend development refers to the server-side logic that powers an application: processing requests, running business logic, managing authentication, and communicating with databases. Common backend languages/frameworks include Node.js, Python (Django/Flask), Java (Spring), PHP, and Ruby on Rails.
+Real-world example: When a user logs into Amazon, the backend verifies the username and password against the database, checks the order history, and calculates prices and discounts before sending the result back to the frontend.
+Full-Stack Development
+A full-stack developer works on both the frontend and backend of an application, understanding how the client-side and server-side communicate and integrate with databases. They can build a complete, working application end-to-end.
+Real-world example: A solo developer building a food-delivery app from scratch - designing the ordering screen (frontend), writing the order-processing and payment logic (backend), and managing the restaurant/menu database - is working as a full-stack developer.
+AspectFrontendBackendFull-StackFocusUser interface & experienceServer logic & dataBoth sidesLanguagesHTML, CSS, JavaScriptPython, Java, Node.js, PHPCombination of bothRuns onUser's browser (client)Web serverClient and serverExample toolReact, VueExpress, DjangoMERN, MEAN stack
+Question 2: Diagram - The Client-Server Model
+The client-server model is the foundation of web architecture. The client (a web browser or mobile app) sends a request to the server over the internet, and the server processes that request and sends back a response, usually containing HTML, CSS, JavaScript, or data.
+
+Figure 1: The Client-Server Model in Web Architecture
+Question 3: How a Browser Requests and Displays a Web Page
+When a user types a URL into a browser and presses Enter, a sequence of steps takes place:
+• 1. DNS Resolution - The browser first performs a DNS lookup to convert the human-readable domain name (e.g. www.example.com) into an IP address.
+• 2. Establishing a Connection - The browser opens a TCP connection with the server at that IP address (and performs a TLS handshake if the site uses HTTPS).
+• 3. Sending the HTTP Request - The browser sends an HTTP/HTTPS request (typically a GET request) asking for the specific page or resource.
+• 4. Server Processing - The web server receives the request, processes it (possibly querying a database or running backend logic), and sends back an HTTP response containing the HTML document and a status code (e.g. 200 OK).
+• 5. Parsing the Response - The browser parses the HTML to build the DOM (Document Object Model), fetches linked resources such as CSS and JavaScript files, and applies styling to build the CSSOM.
+• 6. Rendering the Page - The browser combines the DOM and CSSOM into a render tree, calculates layout, and paints pixels on the screen. JavaScript is executed to add interactivity.
+• 7. Display & Ongoing Requests - The completed page is displayed to the user, and further requests (e.g. for images, fonts, or AJAX data) continue in the background as needed.
+Question 4: Tools Required for a Web Development Environment
+ToolPurposeCode Editor / IDE (e.g. VS Code)Used to write, edit, and manage source code with features like syntax highlighting, IntelliSense, and debugging.Web Browser (e.g. Chrome, Firefox)Used to run and preview web pages, and to debug using built-in Developer Tools.Version Control System (Git)Tracks changes to code over time and enables collaboration between multiple developers.Code Hosting Platform (GitHub/GitLab)Stores repositories online, enables collaboration, code review, and backup of projects.Package Manager (npm/yarn)Installs and manages third-party libraries, frameworks, and dependencies for a project.Local/Development Server (Node.js, XAMPP, Live Server)Runs the website or application locally so developers can test it before deployment.Browser Developer ToolsBuilt into browsers; used to inspect HTML/CSS, debug JavaScript, and monitor network requests.Database Software (MySQL, MongoDB)Stores and manages application data locally during development.Terminal / Command LineUsed to run commands, scripts, and tools such as Git and npm.Design Tools (Figma, Adobe XD)Used to create UI/UX mockups and prototypes before development begins.
+Question 5: What is a Web Server?
+A web server is software (often running on dedicated hardware) that stores, processes, and delivers web pages and other content to clients over the internet using the HTTP/HTTPS protocol. When a browser requests a resource, the web server locates or generates that resource and sends it back as an HTTP response.
+Commonly Used Web Servers
+• Apache HTTP Server - An open-source web server known for its flexibility and wide use with PHP-based sites (e.g. WordPress).
+• Nginx - A high-performance web server and reverse proxy known for handling large numbers of concurrent connections efficiently; commonly used for high-traffic sites.
+• Microsoft IIS (Internet Information Services) - Microsoft's web server, tightly integrated with the Windows and .NET ecosystem.
+• Node.js (Express) - A lightweight web server commonly bundled with Node.js applications, often used with the Express.js framework.
+• LiteSpeed - A web server developed by the Apache Software Foundation, focused on performance and modern protocols like HTTP/2 and HTTP/3.
+Question 6: Roles in a Web Development Project
+RoleResponsibilitiesFrontend DeveloperDesigns and implements the user interface using HTML, CSS, and JavaScript; ensures the site is responsive, accessible, and visually consistent; connects the UI to backend APIs.Backend DeveloperBuilds server-side logic, APIs, and authentication systems; manages business rules and connects the application to the database; ensures performance and security.Database Administrator (DBA)Designs, implements, and maintains the database structure; manages data integrity, backups, security, and performance tuning; optimizes queries.
+Question 7: Installing and Configuring VS Code
+Below are the steps to install and configure Visual Studio Code for HTML, CSS, and JavaScript development:
+• 1. Download - Go to the official website at code.visualstudio.com and download the installer for your operating system (Windows, macOS, or Linux).
+• 2. Install - Run the installer and follow the setup wizard. On Windows, it is recommended to check "Add to PATH" during installation.
+• 3. Install Extensions - Open VS Code, go to the Extensions panel (Ctrl+Shift+X), and install useful extensions such as Live Server (to preview HTML pages with auto-reload), Prettier (code formatter), ESLint (JavaScript linting), and HTML/CSS/JS IntelliSense.
+• 4. Set Up a Project Folder - Create a new folder for the project, open it in VS Code (File > Open Folder), and create index.html, style.css, and script.js files to begin coding.
+• 5. Test the Setup - Right-click index.html and select "Open with Live Server" to view the page in the browser with automatic reloading whenever a file is saved.
+Note: Since this document is generated in a text-based environment, an actual screenshot of your personal VS Code installation cannot be captured here. Please take a screenshot of your own VS Code window (showing the installed extensions and an open HTML file) and paste it into this section before submitting your assignment.
+Question 8: Static vs Dynamic Websites
+AspectStatic WebsiteDynamic WebsiteContentFixed; same for every visitor unless manually editedChanges based on user input, database, or timeTechnologyHTML, CSS, minimal JavaScriptServer-side languages (PHP, Node.js, Python) + databaseSpeedVery fast to load (no server processing)Slightly slower (requires server/database processing)ExampleA simple personal portfolio pageAn e-commerce site like Amazon showing personalized recommendations
+Example of a static website: A basic "About Us" brochure page for a small business that displays the same information to every visitor.
+Example of a dynamic website: A social media platform like Instagram, where each user sees a different, personalized feed generated dynamically from a database.
+Question 9: Five Web Browsers and Their Rendering Engines
+BrowserDeveloperRendering EngineGoogle ChromeGoogleBlink (with V8 JavaScript engine)Mozilla FirefoxMozilla FoundationGecko (with SpiderMonkey JavaScript engine)SafariAppleWebKit (with JavaScriptCore engine)Microsoft EdgeMicrosoftBlink (Chromium-based, with V8 engine)OperaOpera SoftwareBlink (Chromium-based, with V8 engine)
+Rendering engines are responsible for parsing HTML/CSS and painting content on screen. Blink (used by Chrome, Edge, and Opera) is derived from WebKit and is known for speed and broad web-standards support. Gecko (Firefox) is an independent engine developed by Mozilla, valued for strong standards compliance and privacy features. WebKit (Safari) is optimized for Apple devices and known for power efficiency. Because different engines can interpret certain CSS or JavaScript features slightly differently, developers test websites across multiple browsers to ensure consistent cross-browser compatibility.
+Question 10: Labeled Diagram - Basic Web Architecture Flow
+The diagram below shows the complete flow of a typical web application: the client sends a request to the web server, which forwards it to the application server/API layer, which in turn communicates with the database to fetch or store data, before the response travels back through the same chain to the client.
+
+Figure 2: Basic Web Architecture Flow - Client, Server, Database, and APIs

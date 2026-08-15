@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inline Formatting</title>
+</head>
+<body>
+
+    <h1>Creative Paragraph</h1>
+
+    <p>
+        I am <strong>learning HTML</strong> to build
+        <em>interesting web pages</em>.
+        <mark>Practice makes progress!</mark>
+        <small>Keep learning every day.</small>
+        <br>
+        HTML is the foundation of web development.
+    </p>
+
+</body>
+</html>

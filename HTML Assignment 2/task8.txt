@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Highlighted Word</title>
+</head>
+<body>
+
+    <h1>Learning Web Development</h1>
+
+    <p>
+        I am learning <mark>HTML</mark> to create structured web pages.
+        <small>Updated recently</small>
+    </p>
+
+</body>
+</html>

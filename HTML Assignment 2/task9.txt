@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Emphasis</title>
+</head>
+<body>
+
+    <h1>Text Emphasis</h1>
+
+    <p>
+        Learning <strong>HTML</strong> is very important for web development,
+        and practicing it is <em>fun and useful</em>.
+    </p>
+
+</body>
+</html>

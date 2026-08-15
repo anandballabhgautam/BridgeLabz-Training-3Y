@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My First Blog</title>
+</head>
+<body>
+
+    <main>
+
+        <article>
+            <h1>My First Blog</h1>
+
+            <p>
+                Today I started learning HTML. HTML is used to create the
+                structure of web pages. I am excited to learn more about
+                web development and build my own websites.
+            </p>
+        </article>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Span Elements</title>
+</head>
+<body>
+
+    <h1>Using Span Elements</h1>
+
+    <p>
+        My name is <span>Anand</span>.
+        I am a <span>student</span>.
+        I like <span>programming</span>.
+    </p>
+
+</body>
+</html>

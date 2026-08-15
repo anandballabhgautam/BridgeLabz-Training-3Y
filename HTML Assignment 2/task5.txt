@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Line Break Example</title>
+</head>
+<body>
+
+    <h1>Two Sentences</h1>
+
+    <p>
+        I am learning HTML.
+        <br>
+        HTML helps me create web pages.
+    </p>
+
+</body>
+</html>

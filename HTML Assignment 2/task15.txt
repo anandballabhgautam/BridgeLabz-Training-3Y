@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About My Page</title>
+</head>
+<body>
+
+    <main>
+        <p>
+            Hello! My name is Anand Ballabh Gautam. I am a B.Tech Computer
+            Science student learning web development. This page demonstrates
+            the basic structure of an HTML webpage.
+        </p>
+    </main>
+
+</body>
+</html>

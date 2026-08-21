@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Resume</title>
+</head>
+<body>
+
+<header>
+    <h1>Anand Ballabh Gautam</h1>
+    <p>Email: anand@example.com | Phone: +91 9876543210</p>
+    <p>Location: Mathura, Uttar Pradesh</p>
+</header>
+
+<nav>
+    <a href="#about">About</a> |
+    <a href="#skills">Skills</a> |
+    <a href="#projects">Projects</a> |
+    <a href="#education">Education</a>
+</nav>
+
+<main>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a Computer Science student interested in web development,
+            Java programming, Data Structures and Artificial Intelligence.
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Java</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Data Structures and Algorithms</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <ol>
+            <li>Job Portal Website</li>
+            <li>COVID-19 Risk Prediction System</li>
+            <li>Student Management System</li>
+        </ol>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <table border="1">
+            <tr>
+                <th>Course</th>
+                <th>Institute</th>
+                <th>Year</th>
+            </tr>
+            <tr>
+                <td>B.Tech CSE</td>
+                <td>GLA University</td>
+                <td>2028</td>
+            </tr>
+            <tr>
+                <td>Class 12</td>
+                <td>ABC School</td>
+                <td>2024</td>
+            </tr>
+        </table>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Anand Ballabh Gautam. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

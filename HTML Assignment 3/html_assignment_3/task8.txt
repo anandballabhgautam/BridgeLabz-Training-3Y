@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Report</title>
+</head>
+<body>
+
+<h1>GLA University</h1>
+
+<h2>Student Report Card</h2>
+
+<table border="1" title="Student Marks Report">
+    <tr>
+        <th rowspan="2">Subject</th>
+        <th colspan="2">Marks</th>
+    </tr>
+    <tr>
+        <th>Maximum</th>
+        <th>Obtained</th>
+    </tr>
+
+    <tr>
+        <td>Data Structures</td>
+        <td>100</td>
+        <td>85</td>
+    </tr>
+    <tr>
+        <td>DBMS</td>
+        <td>100</td>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td>Operating Systems</td>
+        <td>100</td>
+        <td>78</td>
+    </tr>
+    <tr>
+        <td>Java</td>
+        <td>100</td>
+        <td>88</td>
+    </tr>
+    <tr>
+        <td>Machine Learning</td>
+        <td>100</td>
+        <td>82</td>
+    </tr>
+
+    <tr>
+        <td colspan="2" title="Total marks obtained">Total</td>
+        <td>413 / 500</td>
+    </tr>
+
+    <tr>
+        <td colspan="2">Percentage</td>
+        <td>82.6%</td>
+    </tr>
+</table>
+
+</body>
+</html>

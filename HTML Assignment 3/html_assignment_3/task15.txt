@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+</head>
+<body>
+
+<header>
+    <h1>Anand Ballabh Gautam</h1>
+    <p>Computer Science Student | Web Developer</p>
+</header>
+
+<nav>
+    <a href="#about">About</a> |
+    <a href="#skills">Skills</a> |
+    <a href="#projects">Projects</a> |
+    <a href="#contact">Contact</a>
+</nav>
+
+<main>
+
+    <section id="about">
+        <h2>About Me</h2>
+
+        <p>
+            I am a Computer Science student passionate about programming,
+            web development, Data Structures and Artificial Intelligence.
+        </p>
+
+        <blockquote>
+            "The best way to predict the future is to create it."
+        </blockquote>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+
+        <ul>
+            <li>Java</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Data Structures and Algorithms</li>
+            <li>Machine Learning</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <ol>
+            <li>Job Portal Website</li>
+            <li>COVID-19 Risk Prediction System</li>
+            <li>Student Management System</li>
+            <li>Personal Portfolio Website</li>
+        </ol>
+    </section>
+
+</main>
+
+<aside id="contact">
+    <h2>Contact Info</h2>
+
+    <p>Email: anand@example.com</p>
+    <p>Phone: +91 9876543210</p>
+    <p>
+        LinkedIn:
+        <a href="https://www.linkedin.com/">My LinkedIn Profile</a>
+    </p>
+</aside>
+
+<footer>
+    <p>&copy; 2026 Anand Ballabh Gautam. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

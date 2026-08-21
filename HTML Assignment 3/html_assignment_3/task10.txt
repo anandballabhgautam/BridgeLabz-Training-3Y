@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Selection</title>
+</head>
+<body>
+
+<h1>Select Your Travel Preferences</h1>
+
+<form>
+
+    <label for="country">Country:</label>
+    <select id="country" name="country">
+        <option selected>India</option>
+        <option>Japan</option>
+        <option>France</option>
+        <option>Australia</option>
+    </select>
+
+    <br><br>
+
+    <label for="state">State:</label>
+    <select id="state" name="state">
+        <option selected>Uttar Pradesh</option>
+        <option>Rajasthan</option>
+        <option>Maharashtra</option>
+        <option>Goa</option>
+    </select>
+
+    <br><br>
+
+    <label for="city">City:</label>
+    <select id="city" name="city">
+        <option selected>Mathura</option>
+        <option>Agra</option>
+        <option>Jaipur</option>
+        <option>Mumbai</option>
+    </select>
+
+    <br><br>
+
+    <label for="place">Favorite Tourist Place:</label>
+    <select id="place" name="place">
+        <option selected>Taj Mahal</option>
+        <option>Vrindavan</option>
+        <option>Goa Beach</option>
+        <option>Gateway of India</option>
+    </select>
+
+</form>
+
+<p>
+    My selected choices are India, Uttar Pradesh, Mathura,
+    and my favorite tourist place is the Taj Mahal.
+</p>
+
+</body>
+</html>

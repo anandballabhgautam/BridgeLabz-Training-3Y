@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Personal Blog</title>
+</head>
+<body>
+
+<header>
+    <h1>Anand's Tech Blog</h1>
+</header>
+
+<nav>
+    <a href="#home">Home</a> |
+    <a href="#blogs">Blogs</a> |
+    <a href="#about">About</a>
+</nav>
+
+<main id="blogs">
+
+    <article>
+        <h2>My First Blog</h2>
+
+        <p>
+            <time datetime="2026-08-20">August 20, 2026</time>
+        </p>
+
+        <p>
+            This is my first blog where I share my experience of learning
+            web development and programming.
+        </p>
+
+        <blockquote>
+            "Every expert was once a beginner."
+        </blockquote>
+    </article>
+
+    <article>
+        <h2>Things I Learned This Week</h2>
+
+        <p>
+            <time datetime="2026-08-20">August 20, 2026</time>
+        </p>
+
+        <p>
+            This week I learned about HTML semantic tags, tables, forms,
+            GitHub and basic web page structure.
+        </p>
+
+        <blockquote>
+            "Learning never stops."
+        </blockquote>
+    </article>
+
+</main>
+
+<footer>
+    <p>Written by Anand Ballabh Gautam</p>
+</footer>
+
+</body>
+</html>

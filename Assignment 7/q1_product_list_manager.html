@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product List Manager</title>
+  <style>
+*{box-sizing:border-box}body{font-family:system-ui,sans-serif;max-width:560px;margin:2rem auto;padding:0 1rem;color:#222}
+input,textarea,button{font-size:1rem;font-family:inherit}
+input[type=text],input[type=email],input[type=password],textarea{width:100%;padding:.5rem;border:2px solid #bbb;border-radius:6px}
+button{padding:.45rem .9rem;border:0;border-radius:6px;background:#1565c0;color:#fff;cursor:pointer}
+button.secondary{background:#757575}button.danger{background:#c62828}
+.error{color:#c62828;font-size:.85rem;min-height:1.1em;margin:.25rem 0}
+.success{color:#2e7d32;font-weight:600}
+ul{list-style:none;padding:0}li{display:flex;gap:.5rem;align-items:center;padding:.5rem;border-bottom:1px solid #ddd}
+.item-text,.edit-input{flex:1}.edit-input{padding:.3rem;border:2px solid #1565c0;border-radius:4px}
+  </style>
+</head>
+<body>
+  <h1>Product List Manager</h1>
+  <form id="productForm" style="display:flex;gap:.5rem">
+    <input type="text" id="productInput" placeholder="Add a product" autocomplete="off">
+    <button type="submit">Add</button>
+  </form>
+  <ul id="productList"></ul>
+  <script src="q1_product_list_manager.js"></script>
+</body>
+</html>

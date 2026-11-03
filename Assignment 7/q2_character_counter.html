@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live Character Counter</title>
+  <style>
+*{box-sizing:border-box}body{font-family:system-ui,sans-serif;max-width:560px;margin:2rem auto;padding:0 1rem;color:#222}
+input,textarea,button{font-size:1rem;font-family:inherit}
+input[type=text],input[type=email],input[type=password],textarea{width:100%;padding:.5rem;border:2px solid #bbb;border-radius:6px}
+button{padding:.45rem .9rem;border:0;border-radius:6px;background:#1565c0;color:#fff;cursor:pointer}
+button.secondary{background:#757575}button.danger{background:#c62828}
+.error{color:#c62828;font-size:.85rem;min-height:1.1em;margin:.25rem 0}
+.success{color:#2e7d32;font-weight:600}
+#counter{font-weight:600;color:#2e7d32}#counter.warning{color:#b58900;background:#fff3b0;display:inline-block;padding:.1rem .4rem;border-radius:4px}
+#counter.limit{color:#fff;background:#c62828;display:inline-block;padding:.1rem .4rem;border-radius:4px}
+  </style>
+</head>
+<body>
+  <h1>Live Character Counter</h1>
+  <textarea id="message" rows="5" placeholder="Type here (max 100 characters)"></textarea>
+  <p id="counter"></p>
+  <button id="resetButton" type="button" class="secondary">Reset</button>
+  <script src="q2_character_counter.js"></script>
+</body>
+</html>

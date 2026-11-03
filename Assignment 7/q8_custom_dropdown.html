@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Custom Dropdown</title>
+  <style>
+*{box-sizing:border-box}body{font-family:system-ui,sans-serif;max-width:560px;margin:2rem auto;padding:0 1rem;color:#222}
+input,textarea,button{font-size:1rem;font-family:inherit}
+input[type=text],input[type=email],input[type=password],textarea{width:100%;padding:.5rem;border:2px solid #bbb;border-radius:6px}
+button{padding:.45rem .9rem;border:0;border-radius:6px;background:#1565c0;color:#fff;cursor:pointer}
+button.secondary{background:#757575}button.danger{background:#c62828}
+.error{color:#c62828;font-size:.85rem;min-height:1.1em;margin:.25rem 0}
+.success{color:#2e7d32;font-weight:600}
+#dropdown{position:relative;display:inline-block}#dropdownButton{min-width:200px;text-align:left}
+#optionList{position:absolute;top:100%;left:0;right:0;margin:.2rem 0 0;padding:0;list-style:none;background:#fff;border:1px solid #bbb;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+#optionList[hidden]{display:none}#optionList li{padding:.5rem .8rem;cursor:pointer}#optionList li:hover{background:#e3f2fd}
+  </style>
+</head>
+<body>
+  <h1>Custom Dropdown</h1>
+  <div id="dropdown">
+    <button type="button" id="dropdownButton">Select a language</button>
+    <ul id="optionList" hidden></ul>
+  </div>
+  <p>Click outside the dropdown to close it.</p>
+  <script src="q8_custom_dropdown.js"></script>
+</body>
+</html>

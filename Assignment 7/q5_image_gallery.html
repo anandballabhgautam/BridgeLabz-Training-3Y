@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image Gallery</title>
+  <style>
+*{box-sizing:border-box}body{font-family:system-ui,sans-serif;max-width:560px;margin:2rem auto;padding:0 1rem;color:#222}
+input,textarea,button{font-size:1rem;font-family:inherit}
+input[type=text],input[type=email],input[type=password],textarea{width:100%;padding:.5rem;border:2px solid #bbb;border-radius:6px}
+button{padding:.45rem .9rem;border:0;border-radius:6px;background:#1565c0;color:#fff;cursor:pointer}
+button.secondary{background:#757575}button.danger{background:#c62828}
+.error{color:#c62828;font-size:.85rem;min-height:1.1em;margin:.25rem 0}
+.success{color:#2e7d32;font-weight:600}
+#gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
+#gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;cursor:pointer}
+#modalOverlay{position:fixed;inset:0;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;z-index:10}
+#modalOverlay[hidden]{display:none}
+#modalContent{background:#fff;padding:1rem;border-radius:8px;max-width:90vw;text-align:center}
+#modalImage{max-width:100%;width:640px;border-radius:6px}
+  </style>
+</head>
+<body>
+  <h1>Image Gallery</h1>
+  <div id="gallery"></div>
+  <div id="modalOverlay" hidden>
+    <div id="modalContent"><img id="modalImage" alt=""><p>Click outside to close</p></div>
+  </div>
+  <script src="q5_image_gallery.js"></script>
+</body>
+</html>

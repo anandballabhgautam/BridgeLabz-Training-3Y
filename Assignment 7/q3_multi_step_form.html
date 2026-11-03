@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multi-Step Form</title>
+  <style>
+*{box-sizing:border-box}body{font-family:system-ui,sans-serif;max-width:560px;margin:2rem auto;padding:0 1rem;color:#222}
+input,textarea,button{font-size:1rem;font-family:inherit}
+input[type=text],input[type=email],input[type=password],textarea{width:100%;padding:.5rem;border:2px solid #bbb;border-radius:6px}
+button{padding:.45rem .9rem;border:0;border-radius:6px;background:#1565c0;color:#fff;cursor:pointer}
+button.secondary{background:#757575}button.danger{background:#c62828}
+.error{color:#c62828;font-size:.85rem;min-height:1.1em;margin:.25rem 0}
+.success{color:#2e7d32;font-weight:600}
+[hidden]{display:none!important}label{font-weight:600;display:block;margin-bottom:.3rem}
+  </style>
+</head>
+<body>
+  <h1>Multi-Step Form</h1>
+  <p id="progress"></p>
+  <div id="formArea">
+    <div id="step1"><label for="nameInput">Name</label><input type="text" id="nameInput"><p class="error" id="nameError"></p></div>
+    <div id="step2"><label for="emailInput">Email</label><input type="text" id="emailInput"><p class="error" id="emailError"></p></div>
+    <div id="step3"><label for="passwordInput">Password</label><input type="password" id="passwordInput"><p class="error" id="passwordError"></p></div>
+    <button type="button" id="backButton" class="secondary">Back</button>
+    <button type="button" id="nextButton">Next</button>
+  </div>
+  <div id="summary"></div>
+  <script src="q3_multi_step_form.js"></script>
+</body>
+</html>

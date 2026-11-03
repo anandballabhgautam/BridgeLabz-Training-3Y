@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Table Filter</title>
+  <style>
+*{box-sizing:border-box}body{font-family:system-ui,sans-serif;max-width:560px;margin:2rem auto;padding:0 1rem;color:#222}
+input,textarea,button{font-size:1rem;font-family:inherit}
+input[type=text],input[type=email],input[type=password],textarea{width:100%;padding:.5rem;border:2px solid #bbb;border-radius:6px}
+button{padding:.45rem .9rem;border:0;border-radius:6px;background:#1565c0;color:#fff;cursor:pointer}
+button.secondary{background:#757575}button.danger{background:#c62828}
+.error{color:#c62828;font-size:.85rem;min-height:1.1em;margin:.25rem 0}
+.success{color:#2e7d32;font-weight:600}
+table{width:100%;border-collapse:collapse;margin-top:1rem}th,td{padding:.5rem;border-bottom:1px solid #ddd;text-align:left}th{background:#f0f0f0}
+tr[hidden]{display:none}#noResults td{text-align:center;color:#c62828;font-weight:600}
+  </style>
+</head>
+<body>
+  <h1>Student Table Filter</h1>
+  <input type="text" id="searchBox" placeholder="Search name, branch or CGPA..." autocomplete="off">
+  <table id="studentTable">
+    <thead><tr><th>Name</th><th>Branch</th><th>CGPA</th></tr></thead>
+    <tbody>
+      <tr data-row><td>Amit Sharma</td><td>Computer Science</td><td>8.7</td></tr>
+      <tr data-row><td>Sara Khan</td><td>Electronics</td><td>9.1</td></tr>
+      <tr data-row><td>Kiran Patel</td><td>Mechanical</td><td>7.5</td></tr>
+      <tr data-row><td>Neha Verma</td><td>Computer Science</td><td>8.2</td></tr>
+      <tr data-row><td>Rahul Singh</td><td>Civil</td><td>7.9</td></tr>
+      <tr data-row><td>Priya Nair</td><td>Electronics</td><td>8.8</td></tr>
+      <tr id="noResults" hidden><td colspan="3">No results found</td></tr>
+    </tbody>
+  </table>
+  <script src="q6_table_filter.js"></script>
+</body>
+</html>

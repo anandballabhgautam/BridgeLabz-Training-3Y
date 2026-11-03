@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Theme Switcher</title>
+  <style>
+*{box-sizing:border-box}body{font-family:system-ui,sans-serif;max-width:560px;margin:2rem auto;padding:0 1rem;color:#222}
+input,textarea,button{font-size:1rem;font-family:inherit}
+input[type=text],input[type=email],input[type=password],textarea{width:100%;padding:.5rem;border:2px solid #bbb;border-radius:6px}
+button{padding:.45rem .9rem;border:0;border-radius:6px;background:#1565c0;color:#fff;cursor:pointer}
+button.secondary{background:#757575}button.danger{background:#c62828}
+.error{color:#c62828;font-size:.85rem;min-height:1.1em;margin:.25rem 0}
+.success{color:#2e7d32;font-weight:600}
+body{transition:background .2s,color .2s;min-height:100vh;margin:0;padding:2rem 1rem;max-width:none}
+body>*{max-width:560px;margin-left:auto;margin-right:auto}
+body.theme-light{background:#fff;color:#222}
+body.theme-dark{background:#1e1e1e;color:#eee}
+body.theme-blue{background:#0d47a1;color:#e3f2fd}
+body[data-theme="dark"] button{background:#555}body[data-theme="blue"] button{background:#1976d2}
+  </style>
+</head>
+<body>
+  <h1>Theme Switcher</h1>
+  <div id="themeButtons" style="display:flex;gap:.5rem"></div>
+  <p id="currentTheme"></p>
+  <p>This page changes look when you pick a theme. The body has <code>class</code> and <code>data-theme</code> set with <code>setAttribute()</code>.</p>
+  <script src="q4_theme_switcher.js"></script>
+</body>
+</html>

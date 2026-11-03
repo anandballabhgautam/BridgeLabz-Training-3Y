@@ -1,0 +1,500 @@
+Q1. E-COMMERCE PRODUCT MANAGER (Classes + Objects)
+File: Q1.js
+------------------------------------------------------------
+
+class Product {
+    constructor(id, name, price, category) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.category = category;
+    }
+
+    applyDiscount(percent) {
+        this.price -= this.price * percent / 100;
+    }
+
+    displayDetails() {
+        return `ID: ${this.id} | Name: ${this.name} | Price: Rs.${this.price.toFixed(2)} | Category: ${this.category}`;
+    }
+}
+
+const products = [
+    new Product(1, "Laptop", 55000, "Electronics"),
+    new Product(2, "Headphones", 1500, "Electronics"),
+    new Product(3, "Notebook", 80, "Stationery"),
+    new Product(4, "Keyboard", 1200, "Electronics")
+];
+
+products[0].applyDiscount(10);
+
+console.log("All products:");
+products.forEach(product => console.log(product.displayDetails()));
+
+console.log("\\nProducts with price > Rs.1000:");
+products.filter(product => product.price > 1000)
+        .forEach(product => console.log(product.displayDetails()));
+
+
+------------------------------------------------------------
+Q2. STUDENT FORM VALIDATOR (Forms + RegExp)
+File: Q2.html
+------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+    <style>
+        input { display: block; margin: 6px 0 2px; padding: 8px; }
+        .valid { border: 2px solid green; }
+        .invalid { border: 2px solid red; }
+        .error { color: red; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <h2>Student Registration</h2>
+    <form id="studentForm">
+        <label>Name <input id="name" type="text"></label><span id="nameError" class="error"></span>
+        <label>Email <input id="email" type="text"></label><span id="emailError" class="error"></span>
+        <label>Phone <input id="phone" type="text"></label><span id="phoneError" class="error"></span>
+        <label>Password <input id="password" type="password"></label><span id="passwordError" class="error"></span>
+        <button type="submit">Register</button>
+    </form>
+    <p id="message"></p>
+
+    <script>
+        const form = document.getElementById("studentForm");
+
+        const rules = {
+            name: /^[A-Za-z]+$/,
+            email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+            phone: /^\d{10}$/,
+            password: /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).+$/
+        };
+
+        const messages = {
+            name: "Name must contain alphabets only.",
+            email: "Enter a valid email address.",
+            phone: "Phone must be exactly 10 digits.",
+            password: "Password needs an uppercase letter, number, and special character."
+        };
+
+        function validateField(fieldName) {
+            const input = document.getElementById(fieldName);
+            const error = document.getElementById(fieldName + "Error");
+            const valid = rules[fieldName].test(input.value.trim());
+
+            input.classList.toggle("valid", valid);
+            input.classList.toggle("invalid", !valid);
+            error.textContent = valid ? "" : messages[fieldName];
+            return valid;
+        }
+
+        Object.keys(rules).forEach(fieldName => {
+            document.getElementById(fieldName).addEventListener("input", () => {
+                validateField(fieldName);
+            });
+        });
+
+        form.addEventListener("submit", event => {
+            event.preventDefault();
+            const isValid = Object.keys(rules).every(validateField);
+            document.getElementById("message").textContent =
+                isValid ? "Registration successful!" : "Please correct the errors.";
+        });
+    </script>
+</body>
+</html>
+
+
+------------------------------------------------------------
+Q3. LIBRARY MANAGEMENT SYSTEM (Classes + Objects)
+File: Q3.js
+------------------------------------------------------------
+
+class Book {
+    constructor(title, author, ISBN, isIssued = false) {
+        this.title = title;
+        this.author = author;
+        this.ISBN = ISBN;
+        this.isIssued = isIssued;
+    }
+
+    issueBook() {
+        if (this.isIssued) {
+            console.log(`"${this.title}" is already issued.`);
+            return false;
+        }
+        this.isIssued = true;
+        console.log(`"${this.title}" has been issued.`);
+        return true;
+    }
+
+    returnBook() {
+        if (!this.isIssued) {
+            console.log(`"${this.title}" was not issued.`);
+            return false;
+        }
+        this.isIssued = false;
+        console.log(`"${this.title}" has been returned.`);
+        return true;
+    }
+}
+
+const books = [
+    new Book("The Alchemist", "Paulo Coelho", "ISBN101"),
+    new Book("Wings of Fire", "A. P. J. Abdul Kalam", "ISBN102"),
+    new Book("Atomic Habits", "James Clear", "ISBN103", true)
+];
+
+function displayAvailableBooks() {
+    console.log("\\nAvailable books:");
+    books.filter(book => !book.isIssued)
+         .forEach(book => console.log(`${book.title} by ${book.author} | ISBN: ${book.ISBN}`));
+}
+
+function issueBookByISBN(isbn) {
+    const book = books.find(book => book.ISBN === isbn);
+    if (!book) {
+        console.log("Book not found.");
+        return;
+    }
+    book.issueBook();
+}
+
+displayAvailableBooks();
+issueBookByISBN("ISBN102");
+displayAvailableBooks();
+
+// To return a book, call:
+// books.find(book => book.ISBN === "ISBN102").returnBook();
+
+
+------------------------------------------------------------
+Q4. CUSTOM FORM BUILDER (Forms + Classes)
+File: Q4.html
+------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Form Builder</title>
+</head>
+<body>
+    <h2>Dynamic Form</h2>
+    <div id="formContainer"></div>
+    <pre id="output"></pre>
+
+    <script>
+        class FormBuilder {
+            constructor(fields, containerId) {
+                this.fields = fields;
+                this.container = document.getElementById(containerId);
+                this.createForm();
+            }
+
+            createForm() {
+                const fieldsHTML = this.fields.map(field => `
+                    <label>
+                        ${field.label}
+                        <input type="${field.type}" name="${field.name}" required>
+                    </label><br><br>
+                `).join("");
+
+                this.container.innerHTML = `
+                    <form id="dynamicForm">
+                        ${fieldsHTML}
+                        <button type="submit">Submit</button>
+                    </form>
+                `;
+
+                document.getElementById("dynamicForm").addEventListener("submit", event => {
+                    event.preventDefault();
+                    const data = this.getFormData();
+                    document.getElementById("output").textContent =
+                        JSON.stringify(data, null, 2);
+                });
+            }
+
+            getFormData() {
+                const formData = new FormData(document.getElementById("dynamicForm"));
+                return Object.fromEntries(formData.entries());
+            }
+        }
+
+        const fields = [
+            { type: "text", label: "Username", name: "username" },
+            { type: "email", label: "Email", name: "email" },
+            { type: "password", label: "Password", name: "password" }
+        ];
+
+        new FormBuilder(fields, "formContainer");
+    </script>
+</body>
+</html>
+
+
+------------------------------------------------------------
+Q5. MOVIE TICKET BOOKING (Objects + RegExp)
+File: Q5.html
+------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Ticket Booking</title>
+</head>
+<body>
+    <h2>Book Movie Tickets</h2>
+    <form id="bookingForm">
+        <label>Name: <input id="name" required></label><br><br>
+        <label>Email: <input id="email" type="email" required></label><br><br>
+        <label>Seats (1-10): <input id="seats" type="number" min="1" max="10" required></label><br><br>
+        <button type="submit">Book Ticket</button>
+    </form>
+    <p id="message"></p>
+    <pre id="ticket"></pre>
+
+    <script>
+        document.getElementById("bookingForm").addEventListener("submit", event => {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const seats = Number(document.getElementById("seats").value);
+
+            const namePattern = /^[A-Za-z ]+$/;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!namePattern.test(name)) {
+                document.getElementById("message").textContent = "Name must contain alphabets and spaces only.";
+                return;
+            }
+
+            if (!emailPattern.test(email)) {
+                document.getElementById("message").textContent = "Enter a valid email.";
+                return;
+            }
+
+            if (!Number.isInteger(seats) || seats < 1 || seats > 10) {
+                document.getElementById("message").textContent = "Seats must be a whole number from 1 to 10.";
+                return;
+            }
+
+            const booking = { name, email, seats };
+            document.getElementById("message").textContent = "Booking successful!";
+            document.getElementById("ticket").textContent =
+                `MOVIE TICKET\\nName: ${booking.name}\\nEmail: ${booking.email}\\nSeats: ${booking.seats}`;
+        });
+    </script>
+</body>
+</html>
+
+
+------------------------------------------------------------
+Q6. EMPLOYEE MANAGEMENT SYSTEM (Classes + Object Methods)
+File: Q6.js
+------------------------------------------------------------
+
+class Employee {
+    constructor(id, name, department, salary) {
+        this.id = id;
+        this.name = name;
+        this.department = department;
+        this.salary = salary; // Monthly salary
+    }
+
+    getAnnualSalary() {
+        return this.salary * 12;
+    }
+
+    applyBonus(percent) {
+        this.salary += this.salary * percent / 100;
+    }
+}
+
+const employees = [
+    new Employee(1, "Aman", "IT", 40000),
+    new Employee(2, "Riya", "HR", 35000),
+    new Employee(3, "Rahul", "Sales", 30000),
+    new Employee(4, "Neha", "IT", 50000),
+    new Employee(5, "Karan", "Finance", 45000)
+];
+
+// Example: Apply 10% bonus to the first employee.
+employees[0].applyBonus(10);
+
+employees.forEach(employee => {
+    console.log(`${employee.name} (${employee.department}) - Annual Salary: Rs.${employee.getAnnualSalary()}`);
+});
+
+const totalAnnualPayout = employees.reduce((total, employee) => {
+    return total + employee.getAnnualSalary();
+}, 0);
+
+console.log("Total annual payout: Rs." + totalAnnualPayout);
+
+
+------------------------------------------------------------
+Q7. LOGIN FORM VALIDATION USING REGEXP
+File: Q7.html
+------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Validation</title>
+    <style>.error { color: red; }</style>
+</head>
+<body>
+    <h2>Login</h2>
+    <form id="loginForm">
+        <label>Username: <input id="username" required></label><br><br>
+        <label>Password: <input id="password" type="password" required></label><br><br>
+        <button type="submit">Login</button>
+    </form>
+    <p id="message"></p>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", event => {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const errors = [];
+
+            if (username.length < 5) {
+                errors.push("Username must be at least 5 characters.");
+            }
+
+            if (password.length < 8) {
+                errors.push("Password must be at least 8 characters.");
+            }
+            if (!/[0-9]/.test(password)) {
+                errors.push("Password must include a number.");
+            }
+            if (!/[A-Z]/.test(password)) {
+                errors.push("Password must include an uppercase letter.");
+            }
+            if (!/[a-z]/.test(password)) {
+                errors.push("Password must include a lowercase letter.");
+            }
+            if (!/[!@#$%^&*(),.?":{}|<>_\-+=;]/.test(password)) {
+                errors.push("Password must include a special character.");
+            }
+
+            const message = document.getElementById("message");
+            message.className = errors.length ? "error" : "";
+            message.textContent = errors.length ? errors.join(" ") : "Validation successful!";
+        });
+    </script>
+</body>
+</html>
+
+
+------------------------------------------------------------
+Q8. DYNAMIC OBJECT UPDATER
+File: Q8.html
+------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Object Updater</title>
+</head>
+<body>
+    <h2>Edit User</h2>
+    <form id="userForm">
+        <label>Name: <input id="name" value="John" required></label><br><br>
+        <label>Email: <input id="email" type="email" value="john@mail.com" required></label><br><br>
+        <label>Age: <input id="age" type="number" value="21" min="1" required></label><br><br>
+        <button type="submit">Update User</button>
+    </form>
+
+    <h3>Updated User Object</h3>
+    <pre id="userDetails"></pre>
+
+    <script>
+        const user = {
+            name: "John",
+            email: "john@mail.com",
+            age: 21
+        };
+
+        const userDetails = document.getElementById("userDetails");
+
+        function displayUser() {
+            userDetails.textContent = JSON.stringify(user, null, 2);
+        }
+
+        document.getElementById("userForm").addEventListener("submit", event => {
+            event.preventDefault();
+
+            user.name = document.getElementById("name").value.trim();
+            user.email = document.getElementById("email").value.trim();
+            user.age = Number(document.getElementById("age").value);
+
+            displayUser();
+        });
+
+        displayUser();
+    </script>
+</body>
+</html>
+
+
+------------------------------------------------------------
+Q9. SHOPPING CART TOTAL (Classes + RegExp for Coupon)
+File: Q9.js
+------------------------------------------------------------
+
+class Cart {
+    constructor() {
+        this.items = [];
+    }
+
+    addItem(name, price, quantity) {
+        this.items.push({ name, price, quantity });
+    }
+
+    getTotal() {
+        return this.items.reduce((total, item) => {
+            return total + item.price * item.quantity;
+        }, 0);
+    }
+
+    applyCoupon(coupon) {
+        // Accept coupon codes such as SAVE20 or DISC10.
+        const couponPattern = /^(SAVE|DISC)(\d{1,2})$/;
+        const match = coupon.trim().toUpperCase().match(couponPattern);
+
+        if (!match) {
+            console.log("Invalid coupon. Use a code like SAVE20 or DISC10.");
+            return this.getTotal();
+        }
+
+        const discountPercent = Number(match[2]);
+
+        if (discountPercent < 1 || discountPercent > 100) {
+            console.log("Coupon discount must be between 1 and 100.");
+            return this.getTotal();
+        }
+
+        const total = this.getTotal();
+        const discountedTotal = total - (total * discountPercent / 100);
+
+        console.log(`Coupon applied: ${discountPercent}% off`);
+        return discountedTotal;
+    }
+}
+
+const cart = new Cart();
+cart.addItem("T-Shirt", 500, 2);
+cart.addItem("Shoes", 2000, 1);
+cart.addItem("Cap", 300, 3);
+
+console.log("Cart total: Rs." + cart.getTotal().toFixed(2));
+
+const finalTotal = cart.applyCoupon("SAVE20");
+console.log("Final total: Rs." + finalTotal.toFixed(2));

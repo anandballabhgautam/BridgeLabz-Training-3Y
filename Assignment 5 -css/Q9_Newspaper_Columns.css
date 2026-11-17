@@ -1,0 +1,57 @@
+/* Q9 – Newspaper / Magazine Columns */
+
+body {
+  margin: 0;
+  padding: 30px 16px;
+  background-color: #ede4d3;          /* page background colour */
+  font-family: Georgia, "Times New Roman", serif;
+  color: #2b2b2b;
+}
+
+/* Three vertical columns with a gap and a thin rule between them.
+   Padding gives breathing room around the content. */
+.newspaper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #faf6ee;
+  column-count: 3;
+  column-gap: 32px;
+  column-rule: 1px solid #b8a98a;
+}
+
+/* Heading spans across all columns */
+.newspaper h1 {
+  column-span: all;
+  margin: 0 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px double #2b2b2b;
+  font-size: 2.4rem;
+  font-variant: small-caps;
+  text-align: center;
+}
+
+.newspaper p {
+  margin: 0 0 1em;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;                /* justified text */
+}
+
+/* Image floated to the left inside the first column */
+.news-img {
+  float: left;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 14px 8px 0;
+  border: 2px solid #2b2b2b;
+}
+
+/* Fewer columns on narrower screens keeps the text readable */
+@media (max-width: 800px) {
+  .newspaper { column-count: 2; }
+}
+@media (max-width: 500px) {
+  .newspaper { column-count: 1; padding: 18px; }
+  .newspaper h1 { font-size: 1.7rem; }
+}

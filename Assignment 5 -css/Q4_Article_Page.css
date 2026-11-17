@@ -1,0 +1,46 @@
+/* Q4 – Article Page */
+
+body {
+  margin: 0;
+  padding: 40px 20px;
+  background-color: #f8fafc;
+  color: #1e293b;
+  font-family: Georgia, serif;
+  line-height: 1.7;
+}
+
+article { max-width: 720px; margin: 0 auto; }
+
+header h1 { margin: 0 0 8px; font-size: 2.4rem; }
+.byline { margin: 0 0 30px; color: #64748b; font-style: italic; }
+
+/* Consistent spacing between paragraphs */
+article p { margin: 0 0 1.4em; }
+
+/* Larger first letter of every paragraph */
+article p::first-letter {
+  font-size: 2.2em;
+  font-weight: bold;
+  color: #1d4ed8;
+}
+
+/* Bold first line of every paragraph */
+article p::first-line { font-weight: bold; }
+
+/* Highlighted keywords */
+mark {
+  background-color: #fde047;
+  color: #1e293b;
+  padding: 0 4px;
+  border-radius: 3px;
+}
+
+/* Blockquote: left border + background */
+blockquote {
+  margin: 1.6em 0;
+  padding: 16px 24px;
+  background-color: #e0e7ff;
+  border-left: 6px solid #4f46e5;
+  font-style: italic;
+  font-size: 1.15rem;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q10 – Complete Webpage Layout</title>
+  <link rel="stylesheet" href="Q10_Complete_Webpage.css">
+</head>
+<body id="top">
+  <header class="site-header">
+    <h1 class="brand">BrightWeb</h1>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-text">
+        <h2>Welcome to BrightWeb</h2>
+        <p>We design clean and responsive websites.</p>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-text">
+        <h2>About Us</h2>
+        <p>We are a small team of students who love HTML and CSS. Our goal is to create simple, beautiful and accessible web pages for everyone.</p>
+      </div>
+      <img src="images/about.svg" alt="About us illustration">
+    </section>
+
+    <section class="services" id="services">
+      <h2>Our Services</h2>
+      <div class="service-row">
+        <article class="service"><h3>Web Design</h3><p>Modern layouts that look great on every device.</p></article>
+        <article class="service"><h3>Development</h3><p>Fast and clean code built with web standards.</p></article>
+        <article class="service"><h3>Support</h3><p>Friendly help whenever you need changes.</p></article>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Contact Us</h2>
+      <form action="#" method="post">
+        <label for="c-name">Name</label>
+        <input type="text" id="c-name" name="name">
+        <label for="c-email">Email</label>
+        <input type="email" id="c-email" name="email">
+        <label for="c-msg">Message</label>
+        <textarea id="c-msg" name="message" rows="4"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 BrightWeb. All rights reserved.</p>
+  </footer>
+
+  <!-- fixed positioning: stays in the bottom-right corner while scrolling -->
+  <a href="#top" class="to-top">&uarr; Top</a>
+</body>
+</html>

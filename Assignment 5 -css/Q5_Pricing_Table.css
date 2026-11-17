@@ -1,0 +1,71 @@
+/* Q5 – Pricing Table */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+}
+header { text-align: center; padding: 30px 20px 0; }
+
+/* Flex children stretch by default (align-items: stretch),
+   so all plan boxes keep the same height. */
+.plans {
+  display: flex;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.plan {
+  flex: 1;                         /* three equal columns */
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background-color: #ffffff;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  text-align: center;
+  /* Smooth hover animation */
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover: slightly bigger + background change */
+.plan:hover {
+  transform: scale(1.05);
+  background-color: #e0f2fe;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.plan h2 { margin: 0 0 12px; }
+.plan ul { padding: 0; margin: 0 0 20px; list-style: none; flex: 1; }  /* flex:1 pushes price + button down */
+.plan li { padding: 8px 0; border-bottom: 1px solid #e2e8f0; }
+
+.price { font-size: 2rem; font-weight: bold; margin: 0 0 16px; }
+.price span { font-size: 1rem; font-weight: normal; color: #64748b; }
+
+.btn {
+  display: block;
+  padding: 12px;
+  background-color: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.btn:hover { background-color: #1e40af; }
+
+/* Most popular plan: different border colour and style */
+.plan.popular {
+  border: 4px solid #f59e0b;
+  background-color: #fffbeb;
+}
+.plan.popular:hover { background-color: #fde68a; }
+
+@media (max-width: 700px) {
+  .plans { flex-direction: column; }
+}

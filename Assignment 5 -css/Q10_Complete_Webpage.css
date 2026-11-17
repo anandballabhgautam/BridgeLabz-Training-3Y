@@ -1,0 +1,163 @@
+/* Q10 – Complete Webpage: box model + positioning */
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #1e293b;
+  background-color: #f8fafc;
+}
+
+/* STICKY header: sticks to the top once you scroll to it */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 5%;
+  background-color: rgba(15, 23, 42, 0.92);   /* rgba colour */
+  color: #ffffff;
+}
+.brand { margin: 0; font-size: 1.5rem; }
+.site-header nav a {
+  margin-left: 18px;
+  color: #e2e8f0;
+  text-decoration: none;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+}
+.site-header nav a:hover,
+.site-header nav a:focus {
+  border-color: #38bdf8;
+  outline: 2px solid rgba(56, 189, 248, 0.5);   /* outline property */
+  outline-offset: 2px;
+}
+
+/* HERO: relative container + absolute overlay + centred text */
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("images/hero.svg") center / cover no-repeat;
+  text-align: center;
+  color: #ffffff;
+}
+.hero::before {
+  content: "";
+  position: absolute;            /* absolute positioning */
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.2), rgba(15, 23, 42, 0.7));
+}
+.hero-text { position: relative; padding: 20px; }
+.hero-text h2 { margin: 0 0 10px; font-size: 3rem; }
+.hero-text p { margin: 0; font-size: 1.3rem; }
+
+/* ABOUT: two columns (text + image) */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 5%;
+}
+.about-text { flex: 1; }
+.about-text h2 { margin-top: 0; }
+.about-text p { line-height: 1.7; }
+.about img {
+  flex: 1;
+  width: 50%;
+  border-radius: 12px;
+  border: 3px solid #6366f1;
+}
+
+/* SERVICES: three boxes in a row (grid) */
+.services {
+  padding: 60px 5%;
+  background: linear-gradient(135deg, #e0e7ff, #cffafe);   /* gradient */
+  text-align: center;
+}
+.service-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.service {
+  margin: 0;
+  padding: 24px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 2px solid #818cf8;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+.service h3 { margin-top: 0; }
+
+/* CONTACT: simple form */
+.contact {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 60px 5%;
+}
+.contact h2 { text-align: center; margin-top: 0; }
+.contact label { display: block; margin: 12px 0 6px; font-weight: bold; }
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  font-family: inherit;
+}
+.contact input:focus,
+.contact textarea:focus { outline: 3px solid rgba(99, 102, 241, 0.4); border-color: #6366f1; }
+.contact button {
+  margin-top: 16px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4f46e5;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+footer p { margin: 0; }
+
+/* FIXED positioning: back-to-top button always in the corner */
+.to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px 14px;
+  background-color: rgba(79, 70, 229, 0.9);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 20px;
+  z-index: 30;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about { flex-direction: column; }
+  .about img { width: 100%; }
+  .service-row { grid-template-columns: 1fr; }
+  .hero-text h2 { font-size: 2.2rem; }
+  .site-header { flex-direction: column; gap: 8px; }
+  .site-header nav a { margin: 0 6px; }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q4 – CSS Selectors Practice</title>
+  <link rel="stylesheet" href="Q4_Selectors_Practice.css">
+</head>
+<body>
+  <header>
+    <h1>CSS Selectors Practice</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Element, Class and ID</h2>
+      <p>This paragraph is styled with an <strong>element selector</strong> (p).</p>
+      <p class="highlight">This paragraph uses a <strong>class selector</strong> (.highlight).</p>
+      <p id="special">This paragraph uses an <strong>ID selector</strong> (#special).</p>
+    </section>
+
+    <section>
+      <h2>Attribute Selectors</h2>
+      <ul class="links">
+        <li><a href="https://www.wikipedia.org">External https link</a></li>
+        <li><a href="page.html">Local link</a></li>
+        <li><a href="mailto:me@example.com">Email link</a></li>
+      </ul>
+    </section>
+
+    <section class="combinators">
+      <h2>Combinators</h2>
+      <div class="box">
+        <p>First paragraph (direct child)</p>
+        <p>Second paragraph (adjacent sibling of first)</p>
+        <p>Third paragraph (general sibling)</p>
+        <div><p>Nested paragraph (descendant only)</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Selectors Practice</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+/* Q8 – Box-Sizing Comparison */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  text-align: center;
+}
+
+.wrapper { padding: 30px 16px; }
+
+/* Two boxes side by side; they wrap below each other on small screens */
+.compare {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 24px;
+}
+
+/* Same width, padding and border for both boxes */
+.box {
+  width: 220px;
+  padding: 25px;
+  border: 5px solid #0f172a;
+  font-size: 0.95rem;
+}
+.box h2 { margin-top: 0; font-size: 1.1rem; }
+.total { font-weight: bold; }
+
+/* Default behaviour: width = content only. The box grows to 280px. */
+.default-box { box-sizing: content-box; background-color: #fecaca; }
+
+/* border-box: width includes padding + border. The box stays 220px. */
+.border-box { box-sizing: border-box; background-color: #bbf7d0; }
+
+@media (max-width: 600px) {
+  .box { max-width: 100%; }
+}

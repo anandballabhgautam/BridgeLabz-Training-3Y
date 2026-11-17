@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q8 – Box-Sizing Comparison</title>
+  <link rel="stylesheet" href="Q8_Box_Sizing_Comparison.css">
+</head>
+<body>
+  <main class="wrapper">
+    <header>
+      <h1>box-sizing: content-box vs border-box</h1>
+      <p>Both boxes have the same CSS: width 220px, padding 25px and border 5px.</p>
+    </header>
+
+    <div class="compare">
+      <section class="box default-box">
+        <h2>Default (content-box)</h2>
+        <p>The width applies only to the content. Padding and border are added on top.</p>
+        <p class="total">Total = 220 + 50 + 10 = 280px</p>
+      </section>
+
+      <section class="box border-box">
+        <h2>border-box</h2>
+        <p>The width includes the content, padding and border, so the box stays the size you set.</p>
+        <p class="total">Total = 220px</p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

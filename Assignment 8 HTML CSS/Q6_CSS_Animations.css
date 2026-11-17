@@ -1,0 +1,74 @@
+/* Q6 – CSS Animation Demonstration */
+
+* { box-sizing: border-box; }
+
+/* Flexbox centres everything vertically and horizontally */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  text-align: center;
+}
+.stage { padding: 20px; }
+.demos { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px; }
+.demo { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+
+/* Each animation lives inside a fixed-size track */
+.track {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 260px;
+  height: 200px;
+  background-color: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* 1. Moving box: slides left to right and back (direction: alternate) */
+.moving-box {
+  width: 50px;
+  height: 50px;
+  background-color: #f59e0b;
+  border-radius: 8px;
+  animation-name: slide;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes slide {
+  from { transform: translateX(-80px); }
+  to   { transform: translateX(80px); }
+}
+
+/* 2. Bouncing ball: goes up and down; the delay makes it start a bit later */
+.ball {
+  width: 40px;
+  height: 40px;
+  background-color: #38bdf8;
+  border-radius: 50%;
+  animation: bounce 0.8s ease-in-out 0.5s infinite alternate;   /* name duration timing delay count direction */
+}
+@keyframes bounce {
+  from { transform: translateY(50px); }
+  to   { transform: translateY(-50px); }
+}
+
+/* 3. Colour-changing text: runs 5 times only (finite iteration count) */
+.color-text {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  animation: colorChange 2s ease-in-out 0.3s 5 alternate;
+}
+@keyframes colorChange {
+  0%   { color: #f87171; }
+  50%  { color: #facc15; }
+  100% { color: #4ade80; }
+}

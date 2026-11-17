@@ -1,0 +1,59 @@
+/* Q10 – Complete Mini UI Layout */
+
+/* Consistent box-sizing for every element */
+* { box-sizing: border-box; }
+
+/* Flexbox column: header on top, card centred, footer at the bottom */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background-color: #eef2ff;
+  color: #1e1b4b;
+}
+
+header, footer { padding: 16px; text-align: center; background-color: #312e81; color: #ffffff; }
+header h1, footer p { margin: 0; }
+header h1 { font-size: 1.4rem; }
+
+main { flex: 1; display: flex; justify-content: center; align-items: center; padding: 24px 16px; }
+
+/* Main card: shadow + border */
+.card {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background-color: #ffffff;
+  border: 1px solid #c7d2fe;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(49, 46, 129, 0.15);
+}
+.card img { width: 100%; max-width: 150px; align-self: center; border-radius: 10px; border: 2px solid #c7d2fe; }
+
+form { display: flex; flex-direction: column; gap: 6px; }
+label { font-weight: bold; }
+
+input {
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border: 2px solid #c7d2fe;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  transition: 0.3s;
+}
+input:hover { border-color: #818cf8; }
+input:focus { outline: none; border-color: #4f46e5; box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.25); }
+
+.actions { display: flex; gap: 10px; }
+.btn { flex: 1; padding: 11px; border: 2px solid #4f46e5; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: 0.3s; }
+.save { background-color: #4f46e5; color: #ffffff; }
+.cancel { background-color: #ffffff; color: #4f46e5; }
+.save:hover { background-color: #3730a3; transform: translateY(-2px); box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+.cancel:hover { background-color: #eef2ff; transform: translateY(-2px); }
+.btn:focus { outline: 3px solid #fbbf24; outline-offset: 2px; }

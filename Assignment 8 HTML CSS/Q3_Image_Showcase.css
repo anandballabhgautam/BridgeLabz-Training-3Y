@@ -1,0 +1,64 @@
+/* Q3 – Image Showcase */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+}
+header { text-align: center; padding: 30px 20px 0; }
+header h1 { margin: 0; }
+
+/* Grid: 3 columns on desktop */
+.showcase {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+.showcase figure { margin: 0; }
+
+/* Frame: rounded corners + shadow; overflow hidden keeps the zoomed image inside.
+   position: relative lets the overlay sit on top of the image. */
+.frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+.frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Semi-transparent dark overlay, invisible until hover */
+.frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* On hover: image scales up and the overlay darkens it */
+.frame:hover img { transform: scale(1.1); }
+.frame:hover::after { opacity: 1; }
+
+figcaption { margin-top: 10px; text-align: center; font-weight: bold; color: #475569; }
+
+/* Tablet: 2 columns */
+@media (max-width: 900px) {
+  .showcase { grid-template-columns: repeat(2, 1fr); }
+}
+/* Below 700px: one column */
+@media (max-width: 700px) {
+  .showcase { grid-template-columns: 1fr; }
+}

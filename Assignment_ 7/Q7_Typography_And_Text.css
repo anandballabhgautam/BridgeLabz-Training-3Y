@@ -1,0 +1,54 @@
+/* Q7 – Typography and Text Styling */
+
+body {
+  margin: 0;
+  padding: 40px 20px;
+  background-color: #fefce8;
+  color: #1c1917;
+  font-family: Georgia, "Times New Roman", serif;   /* serif for body text */
+  font-size: 1.1rem;
+}
+
+article { max-width: 680px; margin: 0 auto; }
+
+/* Heading: sans-serif, heavy weight, large size */
+h1 {
+  margin: 0 0 6px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.byline { margin: 0 0 30px; font-style: italic; color: #78716c; }
+
+h2 {
+  margin: 30px 0 10px;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #92400e;
+}
+
+/* Readability: generous line-height, left aligned */
+p { line-height: 1.8; text-align: left; margin: 0 0 16px; }
+
+/* Larger first letter and styled first line of the opening paragraph */
+article > p:first-of-type::first-letter {
+  font-size: 3em;
+  font-weight: bold;
+  color: #b45309;
+}
+article > p:first-of-type::first-line {
+  font-variant: small-caps;
+  letter-spacing: 1px;
+}
+
+/* Custom colours for inline elements */
+strong { color: #b91c1c; font-weight: 700; }
+em { color: #1d4ed8; font-style: italic; }
+mark { background-color: #bef264; color: #1c1917; padding: 0 4px; }
+code { font-family: "Courier New", monospace; background-color: #e7e5e4; padding: 2px 6px; border-radius: 4px; font-size: 0.95em; }
+.heavy { font-weight: 900; font-size: 1.2em; }
+
+/* Letter-spacing and justified text on the last paragraph */
+.spaced { letter-spacing: 0.5px; text-align: justify; }

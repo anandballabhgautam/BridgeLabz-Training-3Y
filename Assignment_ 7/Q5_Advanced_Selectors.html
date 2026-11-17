@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q5 – Advanced CSS Selectors</title>
+  <link rel="stylesheet" href="Q5_Advanced_Selectors.css">
+</head>
+<body>
+  <header>
+    <h1>Advanced CSS Selectors</h1>
+  </header>
+
+  <main>
+    <section class="demo">
+      <h2>Attribute Selectors</h2>
+      <form action="#">
+        <input type="text" placeholder="type=text (blue border)">
+        <input type="email" placeholder="type=email (default border)">
+        <input type="text" placeholder="Click me: :focus changes background">
+      </form>
+      <ul class="links">
+        <li><a href="https://www.wikipedia.org">Secure link (https)</a></li>
+        <li><a href="http://example.com">Normal link (http)</a></li>
+        <li><a href="page.html">Local link</a></li>
+      </ul>
+    </section>
+
+    <section class="demo">
+      <h2>:nth-child() and :hover</h2>
+      <ul class="items">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+        <li>Item 6</li>
+      </ul>
+    </section>
+
+    <section class="demo">
+      <h2>Pseudo-elements</h2>
+      <p class="quote">CSS can add content before and after an element.</p>
+    </section>
+
+    <section class="demo combinators">
+      <h2>Combinators</h2>
+      <div class="box">
+        <p>Direct child paragraph (child combinator >)</p>
+        <p>Second paragraph (adjacent sibling +)</p>
+        <p>Third paragraph (general sibling ~)</p>
+        <div><p>Nested paragraph (descendant, not a direct child)</p></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

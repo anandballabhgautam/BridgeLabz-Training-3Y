@@ -1,0 +1,60 @@
+/* Q5 – Advanced CSS Selectors */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+}
+header { text-align: center; padding: 24px 20px 0; }
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.demo { padding: 20px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); }
+.demo h2 { margin-top: 0; font-size: 1.15rem; }
+
+/* ---------- ATTRIBUTE SELECTORS ---------- */
+/* [type="text"] selects inputs whose type attribute is exactly "text" */
+input[type="text"] { border: 2px solid #2563eb; }
+input { display: block; width: 100%; margin-bottom: 10px; padding: 8px; border: 2px solid #cbd5e1; border-radius: 6px; }
+
+/* [href^="https"] selects links whose href STARTS WITH "https" */
+a[href^="https"] { color: #15803d; font-weight: bold; }
+
+/* ---------- PSEUDO-CLASSES ---------- */
+/* :focus applies while the element is selected/being typed in */
+input:focus { background-color: #fef9c3; outline: none; }
+
+/* :hover applies when the mouse is over the element */
+.items li:hover { background-color: #bfdbfe; }
+
+/* :nth-child(odd) / :nth-child(3) select by position inside the parent */
+.items li { padding: 8px 12px; list-style: none; }
+.items li:nth-child(odd) { background-color: #e2e8f0; }
+.items li:nth-child(3) { font-weight: bold; color: #b91c1c; }
+.items { padding: 0; margin: 0; }
+
+/* ---------- PSEUDO-ELEMENTS ---------- */
+/* ::before / ::after insert generated content before or after the element's content */
+.quote::before { content: "\201C "; font-size: 1.5em; color: #7c3aed; }
+.quote::after  { content: " \201D"; font-size: 1.5em; color: #7c3aed; }
+
+/* ---------- COMBINATORS ---------- */
+/* Descendant (space): every p anywhere inside .box */
+.box p { padding: 6px; margin: 6px 0; background-color: #f1f5f9; }
+
+/* Child (>): only p elements that are DIRECT children of .box */
+.box > p { border-left: 5px solid #2563eb; }
+
+/* Adjacent sibling (+): the p immediately after the first p */
+.box > p:first-child + p { background-color: #fde68a; }
+
+/* General sibling (~): all p siblings that come after the first p */
+.box > p:first-child ~ p { font-style: italic; }

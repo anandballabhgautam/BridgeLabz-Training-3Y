@@ -1,0 +1,60 @@
+/* Q8 – Box Model Exploration */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  /* Flexbox centres the whole demonstration */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 30px 16px;
+  width: 100%;
+  max-width: 800px;
+}
+h1 { margin: 0; }
+.panel { width: 100%; padding: 20px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); }
+.panel h2 { margin-top: 0; text-align: center; }
+
+/* ---------- Layer diagram ---------- */
+.diagram { display: flex; justify-content: center; }
+.tag { display: block; font-size: 0.8rem; font-weight: bold; }
+
+/* Each layer has its own colour (and an outline) so it is easy to tell apart.
+   The padding of each wrapper shows the layer of the next one. */
+.margin-layer  { padding: 30px; background-color: #fdba74; outline: 2px dashed #9a3412; }
+.border-layer  { padding: 16px; background-color: #fde047; outline: 2px solid #854d0e; }
+.padding-layer { padding: 24px; background-color: #86efac; outline: 2px solid #166534; }
+.content-layer { padding: 24px 40px; background-color: #93c5fd; outline: 2px solid #1e3a8a; text-align: center; font-weight: bold; }
+
+.legend { max-width: 500px; margin: 20px auto 0; line-height: 1.7; }
+
+/* ---------- content-box vs border-box ---------- */
+.note { text-align: center; margin-top: 0; }
+.compare { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 20px; }
+
+/* Same size settings for both boxes */
+.demo-box {
+  width: 200px;
+  padding: 20px;
+  border: 10px solid #4f46e5;
+  background-color: #e0e7ff;
+  outline: 2px dashed #ef4444;   /* outline is drawn outside the border so the real size is visible */
+  font-size: 0.9rem;
+}
+.demo-box p { margin: 0; text-align: center; }
+
+/* Default behaviour: width applies to the CONTENT only, padding and border are added on top */
+.content-box { box-sizing: content-box; }
+
+/* border-box: width INCLUDES padding and border */
+.border-box { box-sizing: border-box; }

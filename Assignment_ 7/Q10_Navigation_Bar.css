@@ -1,0 +1,50 @@
+/* Q10 – Navigation Bar with Transitions */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+}
+
+header { background-color: #1e293b; }
+
+/* Horizontal navigation using Flexbox */
+.navbar { display: flex; justify-content: center; }
+
+.navbar a {
+  padding: 16px 28px;
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 4px solid transparent;   /* reserved space so the layout doesn't jump on hover */
+  transition: all 0.3s ease;              /* smooth hover */
+}
+.navbar a:hover {
+  background-color: #334155;
+  border-bottom-color: #38bdf8;
+  color: #ffffff;
+}
+
+/* Active link: distinct background and underline */
+.navbar a.active {
+  background-color: #4f46e5;
+  border-bottom-color: #fbbf24;
+  color: #ffffff;
+}
+
+main { flex: 1; max-width: 700px; margin: 0 auto; padding: 40px 20px; }
+
+footer { padding: 16px; text-align: center; background-color: #1e293b; color: #e2e8f0; }
+footer p { margin: 0; }
+
+/* Below 700px the links stack vertically */
+@media (max-width: 700px) {
+  .navbar { flex-direction: column; }
+  .navbar a { text-align: center; border-bottom: 1px solid #334155; }
+}

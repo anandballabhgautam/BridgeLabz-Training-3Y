@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q8 – Box Model Exploration</title>
+  <link rel="stylesheet" href="Q8_Box_Model_Exploration.css">
+</head>
+<body>
+  <main class="wrapper">
+    <header>
+      <h1>The CSS Box Model</h1>
+    </header>
+
+    <section class="panel">
+      <h2>The Four Layers</h2>
+      <div class="diagram">
+        <div class="margin-layer"><span class="tag">margin</span>
+          <div class="border-layer"><span class="tag">border</span>
+            <div class="padding-layer"><span class="tag">padding</span>
+              <div class="content-layer">content</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="legend">
+        <li><strong>Content:</strong> the text or image itself.</li>
+        <li><strong>Padding:</strong> space between the content and the border.</li>
+        <li><strong>Border:</strong> the line around the padding.</li>
+        <li><strong>Margin:</strong> transparent space outside the border.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>content-box vs border-box</h2>
+      <p class="note">Both boxes use the same CSS: width 200px, padding 20px, border 10px.</p>
+      <div class="compare">
+        <div class="demo-box content-box">
+          <p>content-box (default)<br>Total width = 200 + 40 + 20 = <strong>260px</strong></p>
+        </div>
+        <div class="demo-box border-box">
+          <p>border-box<br>Total width = <strong>200px</strong></p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

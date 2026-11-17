@@ -1,0 +1,53 @@
+/* Q1 – Borders and Padding Demonstration */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+}
+
+header { text-align: center; padding: 30px 20px 0; }
+header h1 { margin: 0 0 6px; }
+main { max-width: 1000px; margin: 0 auto; padding: 20px; }
+section { margin-bottom: 30px; }
+
+/* Flexbox lines the boxes up horizontally (wraps on small screens) */
+.row { display: flex; flex-wrap: wrap; gap: 20px; }
+
+/* Base box: transition makes the border colour change smooth on hover */
+.box {
+  flex: 1 1 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90px;
+  padding: 16px;
+  background-color: #ffffff;
+  border: 4px solid #4f46e5;
+  font-weight: bold;
+  transition: border-color 0.4s ease;
+}
+.box:hover { border-color: #f59e0b; }   /* border colour changes on hover */
+
+/* Different border styles */
+.solid  { border-style: solid; }
+.dashed { border-style: dashed; }
+.double { border-style: double; border-width: 8px; }   /* double needs a thicker border to be visible */
+.groove { border-style: groove; border-width: 8px; }
+
+/* Rounded corners */
+.r-small  { border-radius: 8px; }
+.r-large  { border-radius: 30px; }
+.r-circle { border-radius: 50%; }
+.r-mixed  { border-radius: 40px 5px 40px 5px; }   /* top-left, top-right, bottom-right, bottom-left */
+
+/* Padding: the span has its own background so the internal spacing is visible */
+.box span { background-color: #c7d2fe; }
+.box.p-small, .box.p-medium, .box.p-large, .box.p-mixed { align-items: flex-start; justify-content: flex-start; }
+.p-small  { padding: 5px; }
+.p-medium { padding: 20px; }
+.p-large  { padding: 40px; }
+.p-mixed  { padding: 10px 40px; }          /* vertical | horizontal */

@@ -1,0 +1,65 @@
+/* Q9 – Outline and Focus Styling */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background-color: #eef2ff;
+  color: #1e1b4b;
+}
+
+.page { width: 90%; max-width: 480px; display: flex; flex-direction: column; gap: 24px; padding: 24px 0; }
+
+/* ---------- Outline style samples ---------- */
+.samples, form { padding: 24px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+h2 { margin-top: 0; font-size: 1.2rem; }
+
+.sample-row { display: flex; flex-wrap: wrap; gap: 24px; padding: 8px; }
+.sample {
+  flex: 1 1 70px;
+  padding: 14px 8px;
+  text-align: center;
+  background-color: #e0e7ff;
+  border-radius: 4px;
+}
+
+/* outline: width style colour; outline-offset moves the outline away from the border */
+.o-solid  { outline: 3px solid #4f46e5;  outline-offset: 0; }
+.o-dashed { outline: 3px dashed #db2777; outline-offset: 4px; }
+.o-dotted { outline: 3px dotted #059669; outline-offset: 8px; }
+.o-double { outline: 5px double #d97706; outline-offset: 4px; }
+.hint { margin: 10px 0 0; font-size: 0.85rem; color: #6366f1; }
+
+/* ---------- Form ---------- */
+label { display: block; margin-bottom: 6px; font-weight: bold; }
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 18px;              /* uniform spacing between fields */
+  padding: 10px 12px;
+  border: 2px solid #c7d2fe;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  font-family: inherit;
+  font-size: 1rem;
+  outline: 2px solid transparent;   /* transparent outline so the focus change is smooth */
+  outline-offset: 2px;
+  transition: outline-color 0.3s ease, border-color 0.3s ease;
+}
+textarea { margin-bottom: 0; resize: vertical; }
+
+/* On focus, the outline gets a visible colour */
+input:focus,
+textarea:focus {
+  outline-color: #4f46e5;
+  border-color: #4f46e5;
+}
+input[type="email"]:focus { outline-color: #db2777; border-color: #db2777; }
+textarea:focus { outline-style: dashed; outline-offset: 4px; outline-color: #059669; border-color: #059669; }

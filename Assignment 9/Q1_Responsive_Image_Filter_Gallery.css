@@ -1,0 +1,45 @@
+/* Q1 – Responsive Image Filter Gallery */
+
+* { box-sizing: border-box; }
+
+body { margin: 0; font-family: Arial, sans-serif; background-color: #f1f5f9; color: #1e293b; }
+header { text-align: center; padding: 30px 20px 0; }
+header h1 { margin: 0 0 6px; }
+
+/* auto-fit + minmax: columns adjust automatically to the available width */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+.gallery figure { margin: 0; }
+
+.frame { overflow: hidden; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); }
+.frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: filter 0.5s ease;     /* smooth removal of the filter on hover */
+}
+
+/* A different filter on each image */
+.f-blur       { filter: blur(3px); }
+.f-grayscale  { filter: grayscale(100%); }
+.f-sepia      { filter: sepia(100%); }
+.f-brightness { filter: brightness(1.6); }
+.f-contrast   { filter: contrast(2); }
+.f-hue-rotate { filter: hue-rotate(120deg); }
+
+/* Hover: filter fades away */
+.frame:hover img { filter: none; }
+
+figcaption { margin-top: 8px; text-align: center; font-weight: bold; color: #475569; text-transform: capitalize; }
+
+/* Below 600px every image sits in its own row */
+@media (max-width: 599px) {
+  .gallery { grid-template-columns: 1fr; }
+}

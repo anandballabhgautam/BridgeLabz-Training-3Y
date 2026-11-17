@@ -1,0 +1,46 @@
+/* Q5 – Filter Cards with Animation */
+
+* { box-sizing: border-box; }
+
+body { margin: 0; font-family: Arial, sans-serif; background-color: #f1f5f9; color: #1e293b; }
+header { text-align: center; padding: 30px 20px 0; }
+header h1 { margin: 0; }
+
+/* Three cards in a row */
+.cards { display: flex; justify-content: center; gap: 24px; max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+
+.card {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Fade-in when the page loads (opacity only, so it doesn't conflict with the hover transform) */
+  animation: fadeIn 1s ease-in both;
+}
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.4s; }
+
+.card img { width: 100%; max-width: 200px; border-radius: 50%; transition: filter 0.4s ease; }
+.card h2 { margin: 14px 0 6px; }
+.card p { margin: 0; color: #475569; }
+
+/* Filters on the images */
+.grayscale { filter: grayscale(100%); }
+.sepia     { filter: sepia(100%); }
+
+/* Hover: filter removed and the card lifts */
+.card:hover { transform: translateY(-10px); box-shadow: 0 14px 24px rgba(0, 0, 0, 0.25); }
+.card:hover img { filter: none; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Below 800px the cards stack vertically */
+@media (max-width: 799px) {
+  .cards { flex-direction: column; }
+}

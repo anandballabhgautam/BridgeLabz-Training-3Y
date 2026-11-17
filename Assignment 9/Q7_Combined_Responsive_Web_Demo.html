@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q7 – Combined Responsive Web Demo</title>
+  <link rel="stylesheet" href="Q7_Combined_Responsive_Web_Demo.css">
+</head>
+<body>
+  <header>
+    <div class="logo">ResponsiveLab</div>
+    <nav>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#sheet">Cheat Sheet</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="panel" id="gallery">
+      <h2>Image Gallery</h2>
+      <div class="thumbs">
+        <img src="images/gallery-1.svg" alt="Mountain Sunrise">
+        <img src="images/gallery-2.svg" alt="Ocean Breeze">
+        <img src="images/gallery-3.svg" alt="Forest Trail">
+        <img src="images/gallery-4.svg" alt="Twilight Sky">
+      </div>
+    </section>
+
+    <section class="panel" id="about">
+      <h2>What is Responsive Design?</h2>
+      <p>Responsive design makes a website look good on every screen. It uses flexible layouts, scalable images and media queries so the same page works on phones, tablets and desktops.</p>
+    </section>
+
+    <section class="panel" id="sheet">
+      <h2>Cheat Sheet Preview</h2>
+      <ul>
+        <li><strong>Filters:</strong> <code>filter: blur(2px)</code></li>
+        <li><strong>Media Query:</strong> <code>@media (max-width: 700px)</code></li>
+        <li><strong>Grid:</strong> <code>repeat(auto-fit, minmax(200px, 1fr))</code></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact: hello@responsivelab.example &middot; +91 98765 43210</p>
+  </footer>
+</body>
+</html>

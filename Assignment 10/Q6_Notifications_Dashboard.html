@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Q6 – Notifications Dashboard</title>
+  <!-- Bootstrap 5 CSS via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="Q6_Notifications_Dashboard.css">
+</head>
+<body class="bg-light">
+  <header class="bg-dark text-white py-3 mb-4">
+    <div class="container">
+      <h1 class="h4 mb-0">Notifications</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- card groups the whole panel together -->
+    <section class="card shadow-sm">
+      <div class="card-header fw-bold">Recent Activity</div>
+      <div class="card-body">
+
+        <!-- Summary "well": a bordered, padded, light-background box -->
+        <div class="bg-light border rounded p-3 mb-4 summary">
+          <strong>Summary:</strong> 3 new notifications &middot; 1 warning needs your attention.
+        </div>
+
+        <!-- Contextual alerts: alert-success / alert-info / alert-danger -->
+        <div class="alert alert-success" role="alert">
+          <strong>New message!</strong> Riya sent you a message about the project plan.
+        </div>
+
+        <div class="alert alert-info" role="alert">
+          <strong>Tip:</strong> You can customise your dashboard from the Settings page.
+        </div>
+
+        <div class="alert alert-danger" role="alert">
+          <strong>Warning:</strong> Your storage is almost full. Delete old files to continue uploading.
+        </div>
+
+        <!-- Dismissible alert: alert-dismissible + btn-close (uses Bootstrap JS) -->
+        <div class="alert alert-warning alert-dismissible fade show mb-0" role="alert">
+          <strong>Reminder:</strong> Your subscription renews in 3 days.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center text-muted py-4">
+    <small>&copy; 2026 Notification Centre</small>
+  </footer>
+
+  <!-- Bootstrap JS bundle: needed for the dismissible alert -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

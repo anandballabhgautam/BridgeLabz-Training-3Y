@@ -1,0 +1,4 @@
+/* Q4 – Custom styles on top of Bootstrap */
+
+.menu-header { background: linear-gradient(135deg, #9a3412, #ea580c); }
+.table thead th { letter-spacing: 0.5px; }

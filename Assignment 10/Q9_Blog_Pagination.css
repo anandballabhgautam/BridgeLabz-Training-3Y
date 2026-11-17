@@ -1,0 +1,6 @@
+/* Q9 – Custom styles on top of Bootstrap */
+
+main.container { max-width: 760px; }
+.list-group-item { transition: background-color 0.2s ease; }
+.list-group-item:hover { background-color: #eef2ff; }
+.btn-outline-secondary { transition: all 0.3s ease; }

@@ -1,0 +1,8 @@
+/* Q8 – Custom styles on top of Bootstrap */
+
+/* Smooth transition; on hover the shadow grows (same value as Bootstrap's .shadow-lg) */
+.plan { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.plan:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--bs-box-shadow-lg) !important;
+}

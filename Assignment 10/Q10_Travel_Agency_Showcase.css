@@ -1,0 +1,9 @@
+/* Q10 – Custom styles on top of Bootstrap */
+
+/* Keep the carousel images a comfortable height on every screen */
+.carousel-item img { max-height: 520px; object-fit: cover; }
+
+/* Dark strip behind the caption text so it stays readable */
+.carousel-caption { background-color: rgba(0, 0, 0, 0.45); border-radius: 8px; }
+
+.progress { height: 28px; }

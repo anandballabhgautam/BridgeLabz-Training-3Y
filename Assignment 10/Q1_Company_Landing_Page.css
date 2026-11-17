@@ -1,0 +1,13 @@
+/* Q1 – Custom styles on top of Bootstrap */
+
+/* Hero background: gradient with a dark overlay for readable white text */
+.hero {
+  background: linear-gradient(135deg, #1e3a8a, #6d28d9);
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Feature boxes lift slightly on hover */
+.feature { transition: transform 0.3s ease, box-shadow 0.3s ease; background-color: #ffffff; }
+.feature:hover { transform: translateY(-5px); box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15); }

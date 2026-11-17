@@ -1,0 +1,6 @@
+/* Q7 – Custom styles on top of Bootstrap */
+
+main.container { max-width: 700px; }
+.list-group-item { transition: background-color 0.2s ease; }
+.list-group-item:hover { background-color: #eef2ff; }
+.badge { min-width: 64px; }

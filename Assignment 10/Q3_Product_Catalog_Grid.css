@@ -1,0 +1,12 @@
+/* Q3 – Custom styles on top of Bootstrap */
+
+/* Smooth transition: the card lifts and its shadow grows on hover
+   (it starts with Bootstrap's .shadow-sm) */
+.product-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Keep all product images the same shape */
+.product-card .card-img-top { aspect-ratio: 4 / 3; object-fit: cover; }

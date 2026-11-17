@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- viewport meta tag is required for Bootstrap's responsive behaviour -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Q1 – Nimbus Labs Landing Page</title>
+  <!-- Bootstrap 5 CSS via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="Q1_Company_Landing_Page.css">
+</head>
+<body>
+  <!-- Full-width header with company name and navbar -->
+  <header class="bg-dark">
+    <!-- navbar-expand-lg: collapses into a hamburger menu below 992px -->
+    <nav class="navbar navbar-expand-lg navbar-dark container">
+      <a class="navbar-brand fw-bold" href="#">Nimbus Labs</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <!-- ms-auto pushes the links to the right -->
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero section: py-5 = vertical padding, text-center = centred text -->
+    <section id="hero" class="hero text-center text-white py-5">
+      <div class="container py-5">
+        <h1 class="display-3 fw-bold">Build Faster in the Cloud</h1>
+        <p class="lead mb-4">Nimbus Labs helps small teams launch, scale and monitor their apps without the hassle.</p>
+        <a href="#features" class="btn btn-primary btn-lg px-5">Get Started</a>
+      </div>
+    </section>
+
+    <!-- container > row > col: Bootstrap's core grid. col-md-4 = three equal columns from 768px up -->
+    <section id="features" class="container py-5">
+      <h2 class="text-center mb-5">Why Teams Choose Us</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="p-4 border rounded h-100 feature">
+            <h3 class="h5">Instant Setup</h3>
+            <p class="mb-0">Deploy your first project in minutes with ready-made templates.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 border rounded h-100 feature">
+            <h3 class="h5">Reliable Scaling</h3>
+            <p class="mb-0">Automatic scaling keeps your app fast when traffic grows.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 border rounded h-100 feature">
+            <h3 class="h5">Clear Insights</h3>
+            <p class="mb-0">Simple dashboards show performance and costs at a glance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="bg-dark text-white text-center py-4">
+    <p class="mb-1">Contact: hello@nimbuslabs.example</p>
+    <!-- Setup check: if this badge is styled as a blue pill, Bootstrap CSS has loaded -->
+    <small>&copy; 2026 Nimbus Labs &middot; <span class="badge rounded-pill text-bg-primary">Bootstrap 5.3 loaded</span></small>
+  </footer>
+
+  <!-- Bootstrap JS bundle: needed only for the navbar toggle button -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

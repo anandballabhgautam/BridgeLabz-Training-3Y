@@ -1,0 +1,28 @@
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; background: #f2f5f8; color: #1d2c40; font-family: Arial, sans-serif; }
+.header { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 7%; background: white; border-bottom: 1px solid #e0e7ef; }
+.logo { color: #1d3e5c; font-size: 1.4rem; font-weight: 900; letter-spacing: 1px; text-decoration: none; }
+.logo span { color: #38968b; }
+nav { display: flex; gap: 1.5rem; }
+nav a { color: #4e6177; text-decoration: none; font-weight: bold; }
+.layout { flex: 1; width: min(1150px, 100%); display: grid; grid-template-columns: minmax(0, 2fr) minmax(230px, 1fr); gap: 1.5rem; margin: 2.5rem auto; padding: 0 1.5rem; }
+.article, .sidebar { padding: 2rem; border: 1px solid #e1e7ee; border-radius: 14px; background: white; box-shadow: 0 7px 22px #1d2c4010; }
+.category { color: #388d85; font-size: .7rem; font-weight: bold; letter-spacing: 2px; }
+.article h1 { margin: .5rem 0 1rem; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; }
+.animated-title { animation: titleIn .9s ease both; }
+.lead { color: #536b83; font-size: 1.2rem; line-height: 1.6; }
+.article > p:not(.category):not(.lead) { color: #64748b; line-height: 1.8; }
+.feature-boxes { display: flex; gap: 1rem; margin-top: 2rem; }
+.feature-boxes div { flex: 1; padding: 1.2rem; border: 1px solid #dfe8ef; border-radius: 10px; background: #f7fafc; }
+.feature-boxes span { color: #348b83; font-weight: bold; }
+.feature-boxes h2 { font-size: 1.05rem; }
+.feature-boxes p { color: #6a798b; font-size: .9rem; line-height: 1.6; }
+.sidebar { display: flex; flex-direction: column; align-self: start; gap: .8rem; }
+.sidebar h2 { margin-top: 0; }
+.sidebar > a { padding: .8rem; border-radius: 7px; background: #f2f6f9; color: #496078; text-decoration: none; }
+.quote { margin-top: 1rem; padding: 1rem; border-left: 4px solid #3d9990; background: #eaf6f3; color: #285b56; }
+.quote p { line-height: 1.6; }
+footer { padding: 1.3rem; background: #1c3854; color: white; text-align: center; }
+@keyframes titleIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 750px) { .header { flex-direction: column; gap: 1rem; } .layout { grid-template-columns: 1fr; margin: 1.5rem auto; } .feature-boxes { flex-direction: column; } }

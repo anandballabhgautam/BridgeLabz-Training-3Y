@@ -1,0 +1,20 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #f1f4f9; color: #1d2c42; font-family: Arial, sans-serif; }
+.dashboard { min-height: 100vh; display: grid; grid-template-columns: 230px 1fr; grid-template-rows: 68px 1fr; grid-template-areas: "header header" "sidebar main"; }
+.top { grid-area: header; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; background: #183653; color: white; }
+.top strong { font-size: 1.3rem; }
+.top span { color: #d2e0ed; font-size: .9rem; }
+.side { grid-area: sidebar; display: flex; flex-direction: column; gap: .5rem; padding: 2rem 1rem; background: white; border-right: 1px solid #e0e7f0; }
+.side h2 { padding-left: .8rem; color: #8290a2; font-size: .7rem; letter-spacing: 2px; }
+.side a { padding: .9rem; border-radius: 7px; color: #53647a; text-decoration: none; }
+.side a:hover { background: #eaf1fa; color: #23558c; }
+.main { grid-area: main; padding: 2.5rem; }
+.page-title p, .box span { color: #58809f; font-size: .7rem; font-weight: bold; letter-spacing: 1.5px; }
+.page-title h1 { margin-top: .3rem; }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.3rem; margin-top: 2rem; }
+.box { min-height: 190px; padding: 1.5rem; border: 1px solid #e0e7ef; border-radius: 13px; background: white; box-shadow: 0 6px 20px #1d2c4210; transition: transform .25s ease, box-shadow .25s ease; }
+.box:hover { transform: scale(1.035); box-shadow: 0 14px 30px #1d2c4228; }
+.box.wide { grid-column: span 2; min-height: 170px; background: linear-gradient(120deg, #e8f3fb, #fff); }
+.box h2 { margin-bottom: .5rem; }
+.box p { color: #68788b; line-height: 1.7; }
+@media (max-width: 700px) { .dashboard { grid-template-columns: 1fr; grid-template-rows: 68px auto 1fr; grid-template-areas: "header" "sidebar" "main"; } .side { flex-direction: row; flex-wrap: wrap; padding: .7rem; } .side h2 { display: none; } .side a { padding: .6rem; } .main { padding: 1.2rem; } .cards { grid-template-columns: 1fr; } .box.wide { grid-column: span 1; } }

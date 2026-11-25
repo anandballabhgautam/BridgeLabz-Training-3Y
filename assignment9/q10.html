@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Q10 – Registration Form Validation</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><h1>Q10 – Registration Form Validation</h1></header>
+<main>
+<section>
+<form id="regForm" novalidate>
+<p><label>Name: <input type="text" id="name"></label> <span class="err" id="eName"></span></p>
+<p><label>Email: <input type="email" id="email"></label> <span class="err" id="eEmail"></span></p>
+<p><label>Password: <input type="password" id="pass"></label> <span class="err" id="ePass"></span></p>
+<button type="submit">Register</button>
+</form>
+<p id="result" class="msg"></p>
+<small>Already registered (demo): admin@site.com, john@site.com, mary@site.com, test@site.com, user@site.com</small>
+</section>
+</main>
+<footer><small>Assignment 9 · jQuery</small></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="q10.js"></script>
+</body></html>

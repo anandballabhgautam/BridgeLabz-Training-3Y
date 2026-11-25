@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Q9 – Multi-jQuery Widgets</title><link rel="stylesheet" href="style.css">
+<style>#modal{position:fixed;top:30%;left:50%;transform:translateX(-50%);background:#fff;padding:20px;border:2px solid #3b5bdb;border-radius:8px;display:none;z-index:9}
+#tip{position:absolute;background:#333;color:#fff;padding:4px 8px;border-radius:4px;display:none;font-size:12px}
+.active-widget{outline:3px solid #3b5bdb}</style></head>
+<body>
+<header><h1>Q9 – Multi-jQuery Widgets</h1></header>
+<main>
+<section class="widget" id="w1" data-tip="Carousel widget">
+ <h2>Carousel (jQuery 1.12.4)</h2>
+ <div id="carousel"><div class="slide">Slide 1</div><div class="slide" style="display:none">Slide 2</div><div class="slide" style="display:none">Slide 3</div><div class="slide" style="display:none">Slide 4</div><div class="slide" style="display:none">Slide 5</div></div>
+ <button id="prev">Prev</button><button id="next">Next</button>
+</section>
+<section class="widget" id="w2" data-tip="Notifications widget">
+ <h2>Notifications (jQuery 3.6.0)</h2>
+ <button class="notify" data-msg="New message received">Message</button>
+ <button class="notify" data-msg="Order shipped">Order</button>
+ <button class="notify" data-msg="Payment successful">Payment</button>
+ <button class="notify" data-msg="Update available">Update</button>
+ <button class="notify" data-msg="Offer expires soon">Offer</button>
+</section>
+<p id="versions"></p>
+</main>
+<div id="modal"><p id="modalText"></p><button id="closeModal">Close</button></div>
+<div id="tip"></div>
+<footer><small>Assignment 9 · jQuery</small></footer>
+
+<!-- Load version 1, then give it a private name and release $ / jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>var $v1 = jQuery.noConflict(true);</script>
+<!-- Load version 2 and do the same, so both can live side by side -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>var $v2 = jQuery.noConflict(true);</script>
+<script src="q9.js"></script>
+</body></html>

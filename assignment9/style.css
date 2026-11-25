@@ -1,0 +1,8 @@
+body{font-family:Arial,sans-serif;max-width:760px;margin:20px auto;padding:0 12px;background:#f5f6fa;color:#222}
+header,section,footer{background:#fff;padding:14px 18px;margin:12px 0;border-radius:8px;box-shadow:0 1px 4px #0002}
+button{padding:7px 13px;margin:3px;border:0;border-radius:5px;background:#3b5bdb;color:#fff;cursor:pointer}
+input,select{padding:7px;margin:3px;border:2px solid #ccc;border-radius:5px}
+ul{list-style:none;padding:0}
+li,article,.banner,.slide{padding:10px;margin:6px 0;border:1px solid #ddd;border-radius:6px;background:#fafafa}
+.hl{background:#fff3bf!important}.sel{color:#e03131;font-weight:bold}.msg{color:#2b8a3e;font-weight:bold}
+.hidden{display:none}.discount{border-left:6px solid #e8590c}
